@@ -41,6 +41,7 @@
     [loginBtn setTitleColor:ColorWhite forState:UIControlStateNormal];
     loginBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     
+  
     
 }
 @end

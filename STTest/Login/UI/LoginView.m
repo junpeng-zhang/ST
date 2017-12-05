@@ -37,6 +37,10 @@
     [loginButton setTitleColor:MainHexColor forState:UIControlStateNormal];
     loginButton.adjustsImageWhenHighlighted = NO;
     
+    //返回
+    UIButton *backBtn =[[[self addButton:@"back"]width:48 height:48] x:50 y:60];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
+    
     
     
     

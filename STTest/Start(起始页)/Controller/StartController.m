@@ -21,7 +21,6 @@
 }
 
 -(void)loginClick:(UIButton *)sender{
-    NSLog(@"11111111111");
     LoginController *vc = [[LoginController alloc]init];
     [self presentViewController:vc animated:true completion:nil];
     

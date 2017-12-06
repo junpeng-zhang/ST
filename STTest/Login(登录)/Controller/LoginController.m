@@ -7,6 +7,8 @@
 //
 
 #import "LoginController.h"
+#import "StartController.h"
+#import "ForGotController.h"
 
 @interface LoginController ()
 
@@ -25,5 +27,14 @@
     
 }
 
+-(void)backClick:(UIButton *)sender{
+    StartController *vc = [[StartController alloc]init];
+    [self presentViewController:vc animated:true completion:nil];
+}
+
+-(void)ForgotPasswordClick:(UIButton *)sender{
+    ForGotController *vc = [[ForGotController alloc]init];
+    [self presentViewController:vc animated:true completion:nil];
+}
 
 @end

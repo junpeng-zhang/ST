@@ -28,17 +28,17 @@
     UIView      *passwordLine           = [[[self addLine:LineColor] width:450 height:2] onBottom:passwordImageView y:30];
     
     //forgotPasswordBTN
-    UIButton *ForGotPasswordBtn         = [[[self addButton:@"ForgetPassword" title:@"忘记密码"] width:150 height:29] onBottom:passwordLine y:20 x:320];
-    [ForGotPasswordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.0f]];
+    UIButton *ForgotPasswordBtn         = [[[self addButton:@"ForgotPassword" title:@"忘记密码"] width:150 height:29] onBottom:passwordLine y:20 x:320];
+    [ForgotPasswordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.0f]];
     
     //login btn
-    UIButton *loginButton               = [[[self addButton:@"Main" title:@"Login"] width:450 height:80] onBottom:passwordLine y:149];
+    UIButton *loginButton               = [[[self addButton:@"Main" title:@"登录"] width:450 height:80] onBottom:passwordLine y:149];
     [loginButton setBackgroundImage:[UIImage imageNamed:@"registered_button_default"] forState:UIControlStateNormal];
     [loginButton setTitleColor:MainHexColor forState:UIControlStateNormal];
     loginButton.adjustsImageWhenHighlighted = NO;
     
     //返回
-    UIButton *backBtn =[[[self addButton:@"back"]width:48 height:48] x:50 y:60];
+    UIButton *backBtn =[[[self addButton:@"back"]width:48 height:48] x:20 y:50];
     [backBtn setBackgroundImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
     
     

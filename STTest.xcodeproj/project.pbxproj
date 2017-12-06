@@ -29,6 +29,8 @@
 		D8CDDB9F1FD68E8E00017064 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDB8E1FD68E8D00017064 /* TestView.m */; };
 		D8CDDBA21FD6975F00017064 /* StartController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDBA11FD6975F00017064 /* StartController.m */; };
 		D8CDDBA51FD69B2000017064 /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDBA41FD69B2000017064 /* StartView.m */; };
+		D8CDDBA81FD7D70900017064 /* ForGotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDBA71FD7D70900017064 /* ForGotView.m */; };
+		D8CDDBAB1FD7D71E00017064 /* ForGotController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDDBAA1FD7D71E00017064 /* ForGotController.m */; };
 		D8E2B9D21FD5399500CC1758 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E2B9D11FD5399500CC1758 /* AppDelegate.m */; };
 		D8E2B9DA1FD5399500CC1758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E2B9D91FD5399500CC1758 /* Assets.xcassets */; };
 		D8E2B9DD1FD5399500CC1758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E2B9DB1FD5399500CC1758 /* LaunchScreen.storyboard */; };
@@ -85,6 +87,10 @@
 		D8CDDBA11FD6975F00017064 /* StartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartController.m; sourceTree = "<group>"; };
 		D8CDDBA31FD69B2000017064 /* StartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
 		D8CDDBA41FD69B2000017064 /* StartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
+		D8CDDBA61FD7D70900017064 /* ForGotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForGotView.h; sourceTree = "<group>"; };
+		D8CDDBA71FD7D70900017064 /* ForGotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForGotView.m; sourceTree = "<group>"; };
+		D8CDDBA91FD7D71E00017064 /* ForGotController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForGotController.h; sourceTree = "<group>"; };
+		D8CDDBAA1FD7D71E00017064 /* ForGotController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForGotController.m; sourceTree = "<group>"; };
 		D8E2B9CD1FD5399500CC1758 /* STTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E2B9D01FD5399500CC1758 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8E2B9D11FD5399500CC1758 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,13 +122,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D80625911FD6413E009727D3 /* Start */ = {
+		D80625911FD6413E009727D3 /* Start(起始页) */ = {
 			isa = PBXGroup;
 			children = (
 				D8CDDB4F1FD6432C00017064 /* Controller */,
 				D8CDDB501FD6432C00017064 /* UI */,
 			);
-			path = Start;
+			path = "Start(起始页)";
 			sourceTree = "<group>";
 		};
 		D80625921FD6414F009727D3 /* Other */ = {
@@ -157,13 +163,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		D8CDDB571FD67DB700017064 /* Login */ = {
+		D8CDDB571FD67DB700017064 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
 				D8CDDB581FD67DB700017064 /* Controller */,
 				D8CDDB591FD67DB700017064 /* UI */,
 			);
-			path = Login;
+			path = "Login(登录)";
 			sourceTree = "<group>";
 		};
 		D8CDDB581FD67DB700017064 /* Controller */ = {
@@ -171,6 +177,8 @@
 			children = (
 				D8CDDB5D1FD68ACF00017064 /* LoginController.h */,
 				D8CDDB5E1FD68ACF00017064 /* LoginController.m */,
+				D8CDDBA91FD7D71E00017064 /* ForGotController.h */,
+				D8CDDBAA1FD7D71E00017064 /* ForGotController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +188,8 @@
 			children = (
 				D8CDDB5A1FD67DCA00017064 /* LoginView.h */,
 				D8CDDB5B1FD67DCA00017064 /* LoginView.m */,
+				D8CDDBA61FD7D70900017064 /* ForGotView.h */,
+				D8CDDBA71FD7D70900017064 /* ForGotView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -308,8 +318,8 @@
 		D8E2B9CF1FD5399500CC1758 /* STTest */ = {
 			isa = PBXGroup;
 			children = (
-				D8CDDB571FD67DB700017064 /* Login */,
-				D80625911FD6413E009727D3 /* Start */,
+				D8CDDB571FD67DB700017064 /* Login(登录) */,
+				D80625911FD6413E009727D3 /* Start(起始页) */,
 				D80625921FD6414F009727D3 /* Other */,
 			);
 			path = STTest;
@@ -450,6 +460,7 @@
 				D8CDDB5C1FD67DCA00017064 /* LoginView.m in Sources */,
 				D8CDDB931FD68E8E00017064 /* STString.m in Sources */,
 				D8CDDB981FD68E8E00017064 /* STView.m in Sources */,
+				D8CDDBAB1FD7D71E00017064 /* ForGotController.m in Sources */,
 				D8CDDB9A1FD68E8E00017064 /* STModel.m in Sources */,
 				D8CDDBA51FD69B2000017064 /* StartView.m in Sources */,
 				D8CDDB941FD68E8E00017064 /* STUserDefaults.m in Sources */,
@@ -464,6 +475,7 @@
 				D8CDDB951FD68E8E00017064 /* STUITextView.m in Sources */,
 				D8CDDB911FD68E8E00017064 /* STDictionary.m in Sources */,
 				D8CDDB8F1FD68E8E00017064 /* STColor.m in Sources */,
+				D8CDDBA81FD7D70900017064 /* ForGotView.m in Sources */,
 				D8CDDB9C1FD68E8E00017064 /* STHttp.m in Sources */,
 				D8CDDB9D1FD68E8E00017064 /* STMessageBox.m in Sources */,
 				D8CDDB9F1FD68E8E00017064 /* TestView.m in Sources */,

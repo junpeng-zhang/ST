@@ -8,6 +8,7 @@
 
 #import "StartController.h"
 #import "LoginController.h"
+#import "RegisterController.h"
 
 @interface StartController ()
 
@@ -17,13 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = MainHexColor;
+    self.view.backgroundColor = mainHexColor;
 }
 
 -(void)loginClick:(UIButton *)sender{
     LoginController *vc = [[LoginController alloc]init];
     [self presentViewController:vc animated:true completion:nil];
     
+}
+
+-(void)registerClick:(UIButton *)sender{
+    RegisterController *vc = [[RegisterController alloc]init];
+    [self presentViewController:vc animated:true completion:nil];
 }
 
 

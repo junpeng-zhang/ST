@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = MainHexColor;
+    self.view.backgroundColor = mainHexColor;
 }
 
 

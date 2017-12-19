@@ -9,7 +9,7 @@
 #ifndef STPrefix_pch
 #define STPrefix_pch
 
-#import "STFramework.h"
+#import "Sagit.h"
 
 
 #endif /* STPrefix_pch */

@@ -10,6 +10,5 @@
 #define STPrefix_pch
 
 #import "Sagit.h"
-
-
+#import "Define.h"
 #endif /* STPrefix_pch */

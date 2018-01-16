@@ -11,40 +11,30 @@
 @implementation LoginView
 
 -(void)initUI{
+    [self backgroundColor:MainHexColor];
     //logo
-    UIImageView *logo                   = [[[[self addImageView:@"logo"] width:170 height:170] relate:Top v:72] toCenter:X];
+    [[[[self addImageView:@"logo" img:@"logo"] width:170 height:170] relate:Top v:72] toCenter:X];
+    
     
     //mobile textfiled
-    UIImageView *moblieImageView        = [[[self addImageView:@"icon_phone"] width:48 height:48]onBottom:logo y:132 x:-148];
-    UITextField *mobileTF               = [[[self addTextField:@"UserName" placeholder:@"手机号码"]width:372 height:68] onRight:moblieImageView x:30 y:-10];
-    mobileTF.keyboardType               = UIKeyboardTypeNumberPad;
-    UIView *mobileLineView              = [[[self addLine:@"Line" color:ColorRed]width:450 height:2]onBottom:moblieImageView y:30];
+    [[[self addImageView:@"icon_phone" img:@"icon_phone"] width:48 height:48]onBottom:@"logo" y:132 x:-148];
+    [[[self addTextField:@"UserName" placeholder:@"手机号码"]width:372 height:68] onRight:@"icon_phone" x:30 y:-10];
+    [STLastTextField keyboardType:UIKeyboardTypeNumberPad];
+    [[[self addLine:@"Line" color:LineColor]width:450 height:2]onBottom:@"icon_phone" y:30];
     
     
     //password textfiled
-    UIImageView *passwordImageView      = [[[self addImageView:@"icon_password"] width:48 height:48] onBottom:mobileLineView y:30];
-    UITextField *passwordTF             = [[[self addTextField:@"password" placeholder:@"密码"] width:372 height:68] onRight:passwordImageView x:30 y: -10];
-    
-    passwordTF.secureTextEntry          = YES;
-    passwordTF.keyboardType             = UIKeyboardTypeNumbersAndPunctuation;
-    UIView      *passwordLine           = [[[self addLine:@"passwordLine" color:ColorRed] width:450 height:2] onBottom:passwordImageView y:30];
+    [[[self addImageView:@"icon_password" img:@"icon_password"] width:48 height:48] onBottom:@"Line" y:30];
+    [[[self addTextField:@"password" placeholder:@"密码"] width:372 height:68] onRight:@"icon_password" x:30 y: -10];
+    [[STLastTextField keyboardType:UIKeyboardTypeNumbersAndPunctuation]secureTextEntry:YES];
+    [[[self addLine:@"passwordLine" color:LineColor] width:450 height:2] onBottom:@"icon_password" y:30];
     
     //forgotPasswordBTN
-    UIButton *ForgotPasswordBtn         = [[[self addButton:@"ForgotPassword" title:@"忘记密码"] width:150 height:29] onBottom:passwordLine y:20 x:320];
-    [ForgotPasswordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.0f]];
+    [[[self addButton:@"ForgotPassword" title:@"忘记密码" font:30] width:150 height:29] onBottom:@"passwordLine" y:20 x:320];
     
     //login btn
-    UIButton *loginButton               = [[[self addButton:@"Main" title:@"登录"] width:450 height:80] onBottom:passwordLine y:149];
-    [loginButton setBackgroundImage:[UIImage imageNamed:@"registered_button_default"] forState:UIControlStateNormal];
-    [loginButton setTitleColor:mainHexColor forState:UIControlStateNormal];
-    loginButton.adjustsImageWhenHighlighted = NO;
-    
-    //返回
-    UIButton *backBtn =[[[self addButton:@"back"]width:48 height:48] x:20 y:50];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
-    
-    
-    
+    [[[self addButton:@"Main" title:@"登录"] width:450 height:80] onBottom:@"passwordLine" y:100];
+    [[[STLastButton backgroundImage:@"registered_button_default" forState:UIControlStateNormal]titleColor:MainHexColor]adjustsImageWhenHighlighted:NO];
     
     
 }

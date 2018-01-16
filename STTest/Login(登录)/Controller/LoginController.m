@@ -18,47 +18,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.title = @"登录";
     
-    self.view.backgroundColor = mainHexColor;
-    
-    UITextField *tf = self.UIList[@"UserName"];
-    tf.delegate = self;
 }
 
--(void)MainClick:(UIButton *)semder{
-    NSLog(@"1111");
-    NSMutableDictionary *para = [self formData];
-    [para setValue:@"1" forKey:@"AccountType"];
-    STMessageBox *box = [STMessageBox share];
-    
-    if (((UITextField *)self.UIList[@"UserName"]).text == nil||
-        [((UITextField *)self.UIList[@"UserName"]).text isEqualToString:@""]){
-        [self.box prompt:@"请输入帐号"];
+-(void)MainClick:(id *)sender{
+
+//    if (![self isMatch:@"手机号" Name:@"UserName"]
+//        ||! [self isMatch:@"密码" Name:@"password"]) {
+//        return;
+//    }
+    if (![self isMatch:@"手机号" name:@"UserName"] || ! [self isMatch:@"密码" name:@"password"]) {
         return;
     }
-    
-    if (((UITextField *)self.UIList[@"password"]).text ==nil ||
-        [((UITextField *)self.UIList[@"password"]).text isEqualToString:@""]){
-        [self.box prompt:@"请输入密码"];
-        return;
-    } 
-    
-}
 
--(void)backClick:(UIButton *)sender{
-    StartController *vc = [[StartController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
+    
+    
+//    [self stPush:[StartController new] title:nil imgName:@"left_arrow"];
+    [self stPush:[StartController new] title:nil img:@"left_arrow"];
+    
 }
 
 -(void)ForgotPasswordClick:(UIButton *)sender{
-    ForGotController *vc = [[ForGotController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
+
+    [self stPush:[ForGotController new] title:nil img:@"left_arrow"];
     
     
 }
+
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (range.location > 10) {

@@ -16,21 +16,21 @@
 
 @implementation StartController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = mainHexColor;
+
+-(void)initUI{
+    [self needNavBar:NO setNavBar:YES];
 }
 
--(void)loginClick:(UIButton *)sender{
-    LoginController *vc = [[LoginController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
-    
+-(void)LoginClick:(UIButton *)sender{
+    [self stPush:[LoginController new] title:nil img:@"left_arrow"];
 }
 
--(void)registerClick:(UIButton *)sender{
-    RegisterController *vc = [[RegisterController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
+-(void)RegisterClick:(UIButton *)sender{
+    [self stPush:[RegisterController new] title:nil img:@"left_arrow"];
 }
+
+
+
 
 
 

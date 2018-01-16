@@ -11,37 +11,33 @@
 @implementation StartView
 
 -(void)initUI{
+    
+    if (self.Controller != nil && self.Controller.navigationController ==nil ) {
+        [self.Controller asRoot:RootViewNavigationType];
+    }
+    [self backgroundColor:MainHexColor];
+
+    
     //logo
-    UIImageView *logo = [[[[self addImageView:nil imgName:@"logo"] width:170 height:170] relate:Top v:180] toCenter: X];
-    //Label
-    UILabel *titleLabel = [[[self addLabel:@"IT"]  onBottom:logo y:-40] toCenter:X];
-    [titleLabel setFont:[UIFont systemFontOfSize:24]];
-    titleLabel.tintColor = ColorWhite;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    UILabel *decLabel = [[[[self addLabel:nil text:@"只要技术好、对象、工作、money、"]width:500 height:50] onBottom:titleLabel y:-20] toCenter:X];
-    [decLabel setFont:[UIFont systemFontOfSize:18]];
-    decLabel.tintColor = ColorWhite;
-    [decLabel sizeToFit];
-    UILabel *decLabel1 = [[[[self addLabel:nil text:@"“随天”帮你找"]width:500 height:50]onBottom:decLabel y:10] toCenter: X];
-    [decLabel1 setFont:[UIFont systemFontOfSize:18]];
-    decLabel1.textAlignment = NSTextAlignmentCenter;
-    //Label颜色
-    [titleLabel setTextColor:ColorWhite];
-    [decLabel setTextColor:ColorWhite];
-    [decLabel1 setTextColor:ColorWhite];
+    [[[[self addImageView:@"logo" img:@"logo"]width:170 height:170]relate:Top v:146]toCenter:X];
+    [[[self addLabel:@"title" text:@"IT连" font:36]onBottom:@"logo" y:20]toCenter:X];
+    [[STLastLabel textColor:@"#FFFFFF"]textAlignment:NSTextAlignmentCenter];
+
+    [[[[self addLabel:@"decLabel" text:@"只要技术好、对象、工作、money、" font:30 ]width:500 height:50] onBottom:@"title" y:30] toCenter:X];
+
+    [[STLastLabel textColor:@"#FFFFFF"]textAlignment:NSTextAlignmentCenter];
+    [[[[self addLabel:@"decLabel1" text:@"“随天”帮你找" font:30]width:500 height:50 ]onBottom:@"decLabel" y:0] toCenter: X];
+    [[STLastLabel textColor:@"FFFFFF"]textAlignment:NSTextAlignmentCenter];
+
     
     //register btn
-    UIButton *registerBtn = [[[[self addButton:@"register"]width:287 height:77]onBottom:decLabel1 y:400]toCenter:X];
-    [registerBtn setBackgroundImage:[UIImage imageNamed:@"register_btn"] forState:UIControlStateNormal];
-//    [registerBtn setTitleColor:MainHexColor forState:UIControlStateNormal];
+    [[[[self addButton:@"Register" title:nil font:30]width:287 height:77]onBottom:@"decLabel1" y:400]toCenter:X];
+    [STLastButton backgroundImage:@"register_btn"];
     
     //LoginBtn
-    UIButton *loginBtn = [[[self addButton:@"login" title:@"已有帐号,立即登录"] onBottom:registerBtn y:50]toCenter:X];
-    [loginBtn setBackgroundColor:mainHexColor];
-    [loginBtn setTitleColor:ColorWhite forState:UIControlStateNormal];
-    loginBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [[[self addButton:@"Login" title:@"已有帐号,立即登录" font:24] onBottom:@"Register" y:50]toCenter:X];
+    [[STLastButton titleColor:ColorWhite]backgroundColor:MainHexColor];
     
-  
     
 }
 @end

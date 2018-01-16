@@ -19,35 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = mainHexColor;
     self.title = @"注册";
-    [self asRoot:RootViewNavigationType];
-    
-    UITextField *tf = self.UIList[@"useranme"];
-    tf.delegate = self;
-    
     
 }
 
--(void)nextClick:(UIButton *)sender{
-    NSMutableDictionary *para = [self formData];
-    STMessageBox *box = [STMessageBox share];
-    if (((UITextField *)self.UIList[@"username"]).text == nil || [((UITextField *)self.UIList[@"username"]).text isEqualToString:@""]) {
-        [self.box prompt:@"请输入手机号码"];
+
+-(void)BasicInfoClick:(id *)sender{
+
+    if(!  [self isMatch:@"手机号" name:@"username" regex:nil] || ![self isMatch:@"密码" name:@"newPassword" regex:nil])
+    {
         return;
+
     }
     
-    if (((UITextField *)self.UIList[@"newPassword"]).text == nil || [((UITextField *)self.UIList[@"newPassword"]).text isEqualToString:@""]) {
-        [self.box prompt:@"请输入新的密码"];
-        return;
-    }
-    
+    [self stPush:[BasicInfoController new] title:nil img:@"left_arrow"];
+
 }
 
--(void)backClick:(UIButton *)sender{
-    StartController *vc = [[StartController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
-    
+-(void)verificationClick:(UIButton *)sender{
+    [STButton(@"verificationBtn") showTime:60];
+    NSLog(@"11111--------111111");
     
 }
 

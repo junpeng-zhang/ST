@@ -8,30 +8,32 @@
 
 #import "BasicInfoController.h"
 
-@interface BasicInfoController ()
+@interface BasicInfoController ()<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @end
 
 @implementation BasicInfoController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"基本信息";
+ 
+}
+
+-(void)complete:(id *)sender{
+    NSLog(@"按钮被点击了！");
+ 
+}
+
+-(void)headImage:(UIImageView *)sender{
     
-}
+    
+    self.title = @"111111";
+    [sender pick:^(NSData *data, UIImagePickerController *picker, NSDictionary<NSString *,id> *info) {
+        [sender image:data];
+    } edit:YES];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

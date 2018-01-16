@@ -16,13 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = mainHexColor;
-}
-
-
--(void)backClick:(UIButton *)sender{
-    StartController *vc = [[StartController alloc]init];
-    [self presentViewController:vc animated:true completion:nil];
+    self.title = @"重置密码";
 }
 
 @end

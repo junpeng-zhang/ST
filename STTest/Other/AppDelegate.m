@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "LoginController.h"
 #import "StartController.h"
-
+#import "WelcomeController.h"
+//#import "AController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,17 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    LoginController *vc = [[LoginController alloc]init];
-    StartController *vc1 = [[StartController alloc]init];
+//    LoginController *vc = [[LoginController alloc]init];
+    
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [[[WelcomeController alloc]init]asRoot];
+//     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[AController new]];
     [self.window makeKeyAndVisible];
     
-    self.window.rootViewController = vc1;
+//    self.window.rootViewController = vc1;
     
     
     return YES;
